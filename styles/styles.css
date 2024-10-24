@@ -1,0 +1,724 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.cursors {
+  width: 40px;
+  height: 40px;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 2px -3px 41px -1px rgba(250, 250, 250, 0.64);
+  pointer-events: none;
+}
+
+.side-menu {
+  width: 200px;
+  height: 90vh;
+  position: absolute;
+  right: 170vh; /* Fija el menú al lado derecho */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-menu .menu {
+  text-align: right;
+  display: block; /* Asegura que el menú esté siempre visible */
+}
+
+.side-menu .menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 25px 0;
+  font-size: 23px;
+}
+
+.side-menu .straight-line {
+  margin: 35px 0;
+  height: 2px;
+  border: 0;
+  background: linear-gradient(to right, #000000 0%, #dffff4 40%, #c1ffea 60%, #000000 100%);
+  width: 0vh;
+  left: 5%;
+  position: relative;
+  transform: translateX(-50%) rotate(90deg);
+  position: absolute;
+}
+
+.mainText {
+  width: 50%;
+  margin-left: 120vh;
+  margin-top: 330px;
+}
+
+.mainText .mainTitle {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 100px;
+  position: relative;
+  letter-spacing: 10px;
+  position: relative;
+  display: block;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px #ffffff;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: all 0.4s linear;
+  opacity: 0.5;
+  user-select: none;
+}
+
+.mainText .mainTitle:hover {
+  opacity: 1;
+  -webkit-text-fill-color: white;
+  text-fill-color: white;
+}
+
+.mainText .subTitle {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+}
+
+
+.planetImg {
+  transform: scale(0.7) rotate(158deg);
+  position: absolute;
+  top: 10%;
+  right: 90vh;
+  animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px) translatex(5px) scale(0.7) rotate(156deg);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px) translatex(-5px) scale(0.7) rotate(162deg);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px) translatex(5px) scale(0.7) rotate(156deg);
+  }
+}
+.explosion {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 10ms;
+  transition-timing-function: ease-out;
+  animation: meniItemClick 0.3s;
+}
+
+@keyframes meniItemClick {
+  0% {
+    transform: scale(0.3);
+    box-shadow: 0 0 0px 0px #9ab3f5;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0.7;
+    box-shadow: 0 0 10px 8px #9ab3f5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    box-shadow: 0 0 0px 0px #9ab3f5;
+  }
+}
+#WebGL-output {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.dg {
+  display: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(black 0%,black 30%,hsl(219, 98%, 24%) 75%,hsl(123, 86%, 14%) 100%);
+  line-height: 1.6;
+  overflow-x: hidden; /* Oculta la barra de desplazamiento */
+  overflow-y: visible;
+  height: 100%; /* Asegura que el contenido llene toda la pantalla */
+}
+
+header {
+  background-color: #00000000;
+  padding: 15px 0; /* Ajusta el padding a tu gusto */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  color: #302d2d;
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #302d2d;
+  text-decoration: none;
+  font-weight: 600;
+}
+.wrapper {
+  width: 195.5vh;
+  height: 140vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 500px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+  margin-top: -20px; /* Ajusta este valor según necesites */
+}
+
+.card {
+  width: 120px;
+  height: 765px; /* Altura de la tarjeta */
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Para posicionar el texto sobre el video */
+  transition: width .6s cubic-bezier(.28,-0.03,0,.99), transform .6s cubic-bezier(.28,-0.03,0,.99);
+  box-shadow: 0px 15px 35px -5px rgba(0,0,0,0.7);
+  border: 2px solid #fff; /* Borde blanco de 2px */
+}
+
+.card video {
+  position: absolute; /* Asegura que el video esté detrás del texto */
+  width: 100%; /* Ancho completo de la tarjeta */
+  height: 100%; /* Alto completo de la tarjeta */
+  object-fit: cover; /* Ajusta el video para cubrir la tarjeta */
+}
+
+.description {
+  position: relative; /* Para asegurar que el texto esté sobre el video */
+  z-index: 1; /* Asegura que el texto esté encima del video */
+  color: white;
+  text-align: center; /* Centra el texto */
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.3s ease;
+}
+
+.card h4 {
+  font-size: 24px; /* Aumenta el tamaño de la fuente */
+  color: hwb(0 100% 0% / 0) ; /* Cambia el color a un tono vibrante */
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0); /* Añade sombra al texto */
+  /*writing-mode: vertical-rl; 
+  transform: rotate(180deg);*/
+  transition: color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para efectos */
+  margin-top: 100px;
+}
+
+.card h5 {
+  font-size: 18px; /* Aumenta el tamaño de la fuente */
+  color: hwb(0 100% 0% / 0) ; /* Cambia el color a un tono vibrante */
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0); /* Añade sombra al texto */
+  /*writing-mode: vertical-rl; 
+  transform: rotate(180deg);*/
+  transition: color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para efectos */
+  margin-top: 30px;
+}
+
+.description p {
+  font-size: 20px; /* Aumenta el tamaño de la fuente para párrafos */
+  margin: 30px 100px ; /* Añade margen superior e inferior */
+  opacity: 10; /* Le da un poco de transparencia */
+  color: rgba(255, 255, 255, 0); /* Color del texto */
+  text-shadow: 
+      -1px -1px 0px rgba(0, 0, 0, 0),
+      1px -1px 0px rgba(0, 0, 0, 0),
+      -1px 1px 0px rgba(0, 0, 0, 0),
+      1px 1px 0px rgba(0, 0, 0, 0); /* Bordes en negro */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para efectos */
+  font-weight: bold;
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.card:hover h4 {
+  color: hwb(0 100% 0%) ; /* Cambia el color del párrafo al pasar el mouse */
+  transform: scale(3); /* Aumenta ligeramente el tamaño del texto al pasar el mouse */
+}
+
+.card:hover h5 {
+  color: hwb(0 100% 0%) ; /* Cambia el color del párrafo al pasar el mouse */
+  transform: scale(1.5); /* Aumenta ligeramente el tamaño del texto al pasar el mouse */
+}
+
+.card:hover p {
+  color: hwb(0 100% 0%); /* Cambia el color del párrafo al pasar el mouse */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño del texto al pasar el mouse */
+}
+
+input:checked + label h1 {
+  writing-mode: horizontal-tb; /* Vuelve el texto a horizontal cuando la carta se expande */
+  transform: rotate(0); /* Elimina la rotación cuando se abre la carta */
+  text-align: center;
+}
+
+input:checked + label .description {
+  opacity: 1; /* Muestra el texto cuando la tarjeta está seleccionada */
+}
+
+input {
+  display: none;
+}
+
+input:checked + label {
+  width: 150vh; /* Ampliar tarjeta seleccionada */
+  transform: scale(1.05); /* Efecto de zoom suave al seleccionarla */
+}
+
+/* Configuraciones de tarjetas con videos */
+.card[for="c1"] video {
+  content: url('./video1.mp4'); /* Ruta del video */
+}
+
+.card[for="c2"] video {
+  content: url('./video2.mp4'); /* Ruta del video */
+}
+
+.card[for="c3"] video {
+  content: url('./video3.mp4'); /* Ruta del video */
+}
+
+.card[for="c4"] video {
+  content: url('./video4.mp4'); /* Ruta del video */
+}
+
+
+/*.about {
+  margin-top: 15%;
+  padding: 100% 20px;
+  text-align: center;
+}*/
+
+.founders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  grid-gap: 20px;
+  margin-top: -100px;
+  background-color: #f5f5f500;
+}
+
+.founder {
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.founder:hover {
+  transform: translateY(-10px);
+}
+
+.founder h3{
+  font-size: 24px; /* Aumenta el tamaño de la fuente */
+  color: hwb(0 100% 0%) ; /* Cambia el color a un tono vibrante */
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0); /* Añade sombra al texto */
+  /*writing-mode: vertical-rl; 
+  transform: rotate(180deg);*/
+  transition: color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para efectos */
+}
+/* Efecto al pasar el mouse sobre la tarjeta */
+.founder:hover h3 {
+  color: hwb(0 100% 0%) ; /* Cambia el color del párrafo al pasar el mouse */
+  transform: scale(3); /* Aumenta ligeramente el tamaño del texto al pasar el mouse */
+}
+
+.founder p{
+  color: white; /* Color del texto */
+  text-shadow: 
+      -1px -1px 0px black,
+      1px -1px 0px black,
+      -1px 1px 0px black,
+      1px 1px 0px black; /* Bordes en negro */
+  margin-top: 15px;
+}
+
+.image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 100px auto 10px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.image-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.image-container:hover .image-default {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.image-container:hover .image-hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+/*.form-content {
+  background: #f9f9f9;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  background-size: cover;
+  padding: 10px;
+  width: 100%;
+  max-width: 600px; /* Ancho máximo para que el formulario no sea demasiado pequeño
+  margin: 0 auto; /* Centrar el formulario 
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-content h2 {
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  justify-content: center;
+}
+
+label {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color:#333;
+}
+
+textarea {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #333;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 570px; /* Ancho completo dentro del formulario 
+  height: 50px; /* Altura más grande 
+  resize: none; /* Desactiva el redimensionado manual si no quieres que el usuario cambie el tamaño 
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #1e92e9;
+}
+
+
+
+:focus {
+  outline: 1px solid #1e92e9;
+}
+
+button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: white;
+  background-color: #3498db;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:active {
+  background-color: #1e6a99;
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+.btn {
+  width: 575px;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #235023;
+}
+
+.btn:hover {
+  background-color: #4cae4c;
+}*/
+
+/* Contenedor general que incluye el formulario y la imagen */
+.form-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que sea responsive */
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 20px;
+  /*background: linear-gradient(175deg, #d9d9d9, #4f4f4f);*/
+  /*box-shadow: 0px 5px 15px rgba(0, 0, 0, 0);*/
+  border-radius: 10px;
+  background-image: url('/resources/form.jpeg'); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+  background-position: center 32%; /* Centra la imagen horizontalmente y la desplaza 50 píxeles hacia abajo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+/* Formulario */
+.form-content {
+  background: #ffffff00;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  /*box-shadow: 0px 5px 15px rgba(0, 0, 0, 0);*/
+  border-radius: 10px;
+}
+
+/* Estilos para el título del formulario */
+.form-content h2 {
+  font-size: 36px;
+  color: white; /* Color del texto */
+  text-shadow: 
+      -1px -1px 0px black,
+      1px -1px 0px black,
+      -1px 1px 0px black,
+      1px 1px 0px black; /* Bordes en negro */
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Ajustes para el formulario en sí */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  color: white; /* Color del texto */
+  text-shadow: 
+      -1px -1px 0px black,
+      1px -1px 0px black,
+      -1px 1px 0px black,
+      1px 1px 0px black; /* Bordes en negro */
+}
+
+input, textarea {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Botón de enviar */
+button {
+  padding: 15px;
+  font-size: 16px;
+  color: white; /* Color del texto */
+  text-shadow: 
+      -1px -1px 0px black,
+      1px -1px 0px black,
+      -1px 1px 0px black,
+      1px 1px 0px black; /* Bordes en negro */  background-color: #3498db;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:active {
+  background-color: #1e6a99;
+  transform: scale(0.98);
+}
+
+.btn {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Imagen a la derecha */
+.form-image {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-image img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .form-container {
+      flex-direction: column;
+  }
+
+  .form-image {
+      margin-left: 0;
+      margin-top: 20px;
+  }
+}
+
+
+/* Sección de servicios */
+.services {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Título de la sección */
+#services-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #007bff;
+}
+
+/* Estilos de cada servicio */
+.service-item {
+  margin: 100px;
+  background: #f4f4f4;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Los elementos son invisibles inicialmente */
+  transform: translateY(200px); /* Los elementos están desplazados inicialmente */
+  transition: opacity 2s ease-out, transform 1s ease-out;
+}
+
+/* Estilos iniciales para ocultar los elementos */
+.service-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s ease, transform 1s ease;
+}
+
+/* Clase para cuando los elementos son visibles */
+.service-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cuando el servicio está visible, se muestra */
+.service-item.show {
+  opacity: 1;
+  transform: translateY(0); /* Vuelve a la posición original */
+}
+
+.service-item h3 {
+  margin: 0;
+  color: #007bff;
+  font-size: 1.8rem;
+}
+
+.service-item p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 2.5;
+}
+
+/*.misión-item{
+  background-color: #fff;
+  padding: 0px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.objetivos-item{
+  background-color: #fff;
+  padding: 0px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}*/
+
+
+footer p{
+  background-color: hsl(123, 86%, 14%);
+  color: white;
+  text-align: center;
+}
+
+footer {
+  background-color: hsla(0, 0%, 100%, 0);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+}

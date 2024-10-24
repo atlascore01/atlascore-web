@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLASCORE - Innovación Tecnológica</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/idioma.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script defer src="https:////cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
+    <script defer src="/actions/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header / Navbar 
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>ATLASCORE</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header> -->
+
+    <!-- Header con el botón de idiomas -->
+    <header>
+        <div class="language-selector">
+            <button id="current-language">
+                <img id="current-flag" src="/resources/Flag_of_Argentina.png" alt="Idioma">
+            </button>
+            <div id="language-options" class="hidden">
+                <button class="language-option" data-lang="en" data-flag="Flag_of_the_United_States.png">
+                    <img src="/resources/Flag_of_the_United_States.png" alt="Inglés" class="flag">
+                </button>
+                <button class="language-option" data-lang="fr" data-flag="Flag_of_Francia.png">
+                    <img src="/resources/Flag_of_Francia.png" alt="Français" class="flag">
+                </button>
+                <button class="language-option" data-lang="pt" data-flag="Flag_of_Brazil.png">
+                    <img src="/resources/Flag_of_Brazil.png" alt="Português" class="flag">
+                </button>
+                <button class="language-option" data-lang="es" data-flag="Flag_of_Argentina.png">
+            <img src="/resources/Flag_of_Argentina.png" alt="Español" class="flag">
+        </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido de la página -->
+    <div class="idioma-p">
+        <p id="text">Este es el contenido de la página en español.</p>
+    </div> 
+
+    <script src="/actions/idioma.js"></script>
+    </header>
+    <div id="WebGL-output">
+    </div>
+    
+    <div class="side-menu">
+    <div id="menuBtn">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+    </div>
+    <div class="menu">
+        <a class="menu-item" id="home" href="#">INICIO</a>
+        <a class="menu-item" id="about" href="#">NOSOTROS</a>
+        <a class="menu-item" id="founders" href="#">FUNDADORES</a>
+        <a class="menu-item" id="services" href="#">SERVICIOS</a>
+        <a class="menu-item" id="contact" href="#">CONTACTANOS</a>
+    </div>
+        <div class="straight-line"></div>
+    </div>
+    
+    
+    <img class="planetImg" src="https://assets.codepen.io/1651485/planet.png" />
+    
+    <div class="mainText">
+    <div class="mainTitle">
+        ATLASCORE
+    </div>
+    <div class="subTitle">
+        This is some random text that will go initialy under the main title
+    </div>
+        <div class="cursors"></div>
+    </div>
+
+<!-- Sección Héroe con carrusel de videos -->
+    <section class="hero">
+        <div class="wrapper">
+            <div class="container">
+                <!-- Primer video -->
+                <input type="radio" name="slide" id="c1" checked>
+                <label for="c1" class="card">
+                    <div class="row">
+                        <div class="icon">1</div>
+                        <div class="description">
+                            <h4 class="translatable" data-key="who_we_are">¿Quiénes Somos?</h4>
+                            <h5 class="translatable" data-key="company_name">ATLASCORE</h5>
+                            <p class="translatable" data-key="company_description">Empresa dedicada a brindar soluciones tecnológicas innovadoras que permiten a las empresas</p>
+                            <p class="translatable" data-key="operational_efficiency">y mejorar su eficiencia operativa.</p>
+                        </div>
+                    </div>
+                    <video src="/resources/video4.mp4" autoplay muted loop></video>
+                </label>
+
+                <!-- Segundo video -->
+                <input type="radio" name="slide" id="c2">
+                <label for="c2" class="card">
+                    <div class="row">
+                        <div class="icon">2</div>
+                        <div class="description">
+                            <h4 class="translatable" data-key="mission">Misión</h4>
+                            <p class="translatable" data-key="mission_description_1">Nuestra misión es brindar servicios IT de consultoría y asesoramiento tecnológico integral personalizado para nuestros clientes,</p>
+                            <p class="translatable" data-key="mission_description_2">logrando potenciar y optimizar su desarrollo como organización,</p>
+                            <p class="translatable" data-key="mission_description_3">mejorando su productividad y su capacidad para innovar y crecer en un entorno de constante cambio.</p>
+                        </div>
+                    </div>
+                    <video src="/resources/video2.mp4" autoplay muted loop></video>
+                </label>
+
+                <!-- Tercer video -->
+                <input type="radio" name="slide" id="c3">
+                <label for="c3" class="card">
+                    <div class="row">
+                        <div class="icon">3</div>
+                        <div class="description">
+                            <h4 class="translatable" data-key="objectives">OBJETIVOS</h4>
+                            <p class="translatable" data-key="objectives_description_1">Nuestro objetivo como organización en desarrollo, es ofrecer soluciones tecnológicas robustas,</p>
+                            <p class="translatable" data-key="objectives_description_2">y personalizadas de manera tal que logren satisfacer las necesidades específicas del cliente.</p>
+                            <p class="translatable" data-key="objectives_description_3">Nos comprometemos en la colaboración estrecha, apoyo y orientación necesaria,</p>
+                            <p class="translatable" data-key="objectives_description_4">en un mundo tecnológico en constante cambio y adaptación.</p>
+                        </div>
+                    </div>
+                    <video src="/resources/video3.mp4" autoplay muted loop></video>
+                </label>
+
+                <!-- Cuarto video -->
+                <input type="radio" name="slide" id="c4">
+                <label for="c4" class="card">
+                    <div class="row">
+                        <div class="icon">4</div>
+                        <div class="description">
+                            <h4 class="translatable" data-key="new_technologies">Nuevas Tecnologías</h4>
+                            <p class="translatable" data-key="advanced_engineering">Ingeniería espacial cada vez más avanzada</p>
+                        </div>
+                    </div>
+                    <video src="/resources/video1.mp4" autoplay muted loop></video>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nosotros 
+    <section id="about" class="about">
+        <div class="service-item">
+            <h2>Quiénes somos</h2>
+            <p>Somos ATLASCORE, una empresa dedicada a brindar soluciones tecnológicas innovadoras que permiten a las empresas crecer y mejorar su eficiencia operativa.</p>
+        </div>
+    </section>-->
+
+    <!-- Sección MISION
+    <section id="misión" class="misión">
+        <div class="misión-item">
+            <h2>Misión</h2>
+            <p>Nuestra misión es brindar servicios IT de consultoría y asesoramiento tecnológico integral personalizado para nuestros clientes,</p>
+            <p>logrando potenciar y optimizar su desarrollo como organización, mejorando su productividad y su capacidad para innovar y crecer en un entorno de constante cambio.</p>
+        </div>
+    </section>-->
+
+    <!-- Sección OBJETIVOS
+    <section id="objetivos" class="objetivos">
+        <div class="objetivos-item">
+            <h2>Objetivos</h2>
+            <p>Nuestro objetivo como organización en desarrollo, es ofrecer soluciones tecnológicas robustas, innovadoras y personalizadas de manera tal que logren satisfacer las necesidades específicas de nuestros clientes.</p>
+            <p>Nos comprometemos en la colaboración estrecha, apoyo y orientación necesaria, en un mundo tecnológico en constante cambio y adaptación.</p>
+        </div>
+    </section> -->
+
+    <section class="founders">
+        <div class="founder">
+            <div class="image-container">
+            <img src="/resources/nico 1.jpeg" alt="Founder 1" class="image-default">
+            <img src="/resources/nico 2.jpg" alt="Founder 1 Hover" class="image-hover">
+            </div>
+            <h3>Nicolas France</h3>
+            <p>Especialista Tecnico en Infraestructura</p>
+            <p>Especialista en Inteligencia Artificial</p>
+        </div>
+
+        <div class="founder">
+            <div class="image-container">
+            <img src="/resources/melian 1.jpg" alt="Founder 2" class="image-default">
+            <img src="/resources/melian 3.jpeg" alt="Founder 2 Hover" class="image-hover">
+            </div>
+            <h3>Agustin Melian</h3>
+            <p>Analista de Monitoreo - Synchro Technologies</p>
+        </div>
+
+        <div class="founder">
+            <div class="image-container">
+            <img src="/resources/n arcos 1.jpg" alt="Founder 3" class="image-default">
+            <img src="/resources/n arcos 2.jpg" alt="Founder 3 Hover" class="image-hover">
+            </div>
+            <h3>Nicolas Arcos</h3>
+            <p>System Administrator/ DevOps Engenier</p>
+        </div>
+
+        <div class="founder">
+            <div class="image-container">
+            <img src="/resources/emma 3.png" alt="Founder 4" class="image-default">
+            <img src="/resources/emma 1.jpg" alt="Founder 4 Hover" class="image-hover">
+            </div>
+            <h3>Emmanuel Stuyck</h3>
+            <p>Incident Manager</p>
+        </div>
+
+        <div class="founder">
+            <div class="image-container">
+            <img src="/resources/gabi 1.png" alt="Founder 5" class="image-default">
+            <img src="/resources/gabi 2.jpeg" alt="Founder 5 Hover" class="image-hover">
+            </div>
+            <h3>Gabriel Bustos</h3>
+            <p>Full-Stack Developer</p>
+        </div>
+
+        <div class="founder">
+            <div class="image-container">
+            <img src="/resources/tilin 1.jpg" alt="Founder 5" class="image-default">
+            <img src="/resources/tilin 2.jpeg" alt="Founder 5 Hover" class="image-hover">
+            </div>
+            <h3>Agustin Quevedo</h3>
+            <p>Product Owner</p>
+            <p>Analista Funcional Nivel 2</p>
+            <p>Soporte Tecnico</p>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="services" class="services">
+        <h2 id="services-title">Nuestros Servicios</h2>
+        <div class="service-item" id="service1">
+            <h3>Desarrollo de Software</h3>
+            <p>Creamos aplicaciones personalizadas para optimizar tus procesos empresariales.</p>
+        </div>
+        <div class="service-item" id="service2">
+            <h3>Consultoría IT</h3>
+            <p>Ofrecemos asesoramiento estratégico para la implementación de tecnología de vanguardia.</p>
+        </div>
+        <div class="service-item" id="service3">
+            <h3>Automatización de Sistemas</h3>
+            <p>Automatizamos procesos clave para mejorar la eficiencia y reducir costos.</p>
+        </div>
+    </section>
+
+    <!-- Script para la animación con scroll -->
+    <script src="/actions/section.js"></script> <!-- Archivo de JavaScript externo -->
+
+    <!-- Sección Contacto 
+    <div class="form-content">
+        <h2>Contact Form</h2>
+
+    </div>-->
+    <div class="form-container">
+        <div class="form-content">
+            <h2>CONTACTANOS</h2>
+            <form action="https://formsubmit.co/francenicolas.it@gmail.com" method="post">
+                <label id="name" for="name">Nombre</label>
+                <textarea type="text" id="name" name="Nombre" placeholder="Enter your name" required></textarea>
+    
+                <label id="email" for="email">Correo</label>
+                <textarea type="email" id="email" name="Correo" placeholder="Enter your email" required></textarea>
+    
+                <label id="subject" for="subject">Asunto</label>
+                <textarea type="text" id="subject" name="Asunto" placeholder="Enter subject" required></textarea>
+    
+                <label id="message" for="message">Mensaje</label>
+                <textarea id="message" name="Mensaje" placeholder="Enter your message" rows="5" required></textarea>
+    
+                <button type="submit" class="btn">Enviar</button>
+    
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/models/principal.html#" >
+    
+                <input type="hidden" name="_captcha" value="false" >
+            </form>
+        </div>
+        <!--<div class="form-image">
+            <img src="form.jpeg" alt="Contact Us Image">
+        </div>-->
+    </div>
+    
+
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 ATLASCORE. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

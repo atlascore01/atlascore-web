@@ -1,0 +1,73 @@
+/* Selector de idioma */
+.language-selector {
+    position: relative;
+}
+
+/* Botón para el idioma actual */
+#current-language {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Tamaño pequeño de las banderas */
+.flag {
+    width:40px ; /* Ajusta el tamaño de las banderas, puedes cambiarlo según tus necesidades */
+    height: auto;
+}
+
+/* Menú desplegable oculto inicialmente */
+#language-options {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 40px; /* Ajusta la posición vertical si es necesario */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    z-index: 100;
+}
+
+/* Ocultar el menú de idiomas */
+#language-options.hidden {
+    display: none;
+}
+
+/* Opciones de idiomas (banderas) en el menú */
+.language-option {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex; /* Usar flexbox para alinear las banderas y textos */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+/* Estilo para las opciones de idioma al pasar el mouse */
+.language-option:hover {
+    background-color: #f1f1f1; /* Cambia el fondo al pasar el mouse */
+}
+
+/* Estilo para el texto de las opciones de idioma */
+.language-option span {
+    margin-left: 8px; /* Espacio entre la bandera y el texto */
+    font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+}
+
+#current-flag {
+    width:40px ; /* Ajusta el tamaño de las banderas, puedes cambiarlo según tus necesidades */
+    height: auto;
+}
+
+.idioma-p p {
+    color: white; /* Color del texto */
+    text-shadow: 
+        -1px -1px 0px black,
+        1px -1px 0px black,
+        -1px 1px 0px black,
+        1px 1px 0px black; /* Bordes en negro */
+    margin-top: -30px;
+}
